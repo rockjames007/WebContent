@@ -128,130 +128,42 @@ include("session.php");
           </div>
         </div>
         <!-- Form validations -->
-        <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-                Form validations
-              </header>
-              <div class="panel-body">
-                <div class="form">
-                  <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
-                    <div class="form-group ">
-                      <label for="cname" class="control-label col-lg-2">Full Name <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control" id="cname" name="fullname" minlength="5" type="text" required />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="cemail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="cemail" type="email" name="email" required />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="curl" class="control-label col-lg-2">Website</label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="curl" type="url" name="url" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="cname" class="control-label col-lg-2">Subject <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control" id="subject" name="subject" minlength="5" type="text" required />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="ccomment" class="control-label col-lg-2">Feedback</label>
-                      <div class="col-lg-10">
-                        <textarea class="form-control " id="ccomment" name="comment" required></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit">Save</button>
-                        <button class="btn btn-default" type="button">Cancel</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-          
-              </div>
+         <table class="table table-striped table-advance table-hover" id="list_div">
+                <tbody>
+                  <tr>
+                    <th><i class="icon_pin_alt"></i>meter id</th>
+                    <th><i class="icon_profile"></i>Name</th>
+                    <th><i class="icon_mail_alt"></i> Email</th>
+                    <th><i class="icon_mobile"></i> Mobile</th>
+                    <th><i class="icon_cogs"></i> Address</th>
+                    <th><i class="icon_calendar"></i>Action</th>
+                  </tr>
+                 </tbody>
+              </table>
             </section>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-                Advanced Form validations
-              </header>
-              <div class="panel-body">
-                <div class="form">
-                  <form class="form-validate form-horizontal " id="register_form" method="get" action="">
-                    <div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">Full name <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="fullname" type="text" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="address" class="control-label col-lg-2">Address <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="address" name="address" type="text" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="username" class="control-label col-lg-2">Username <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="username" name="username" type="text" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="password" name="password" type="password" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="email" name="email" type="email" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy <span class="required">*</span></label>
-                      <div class="col-lg-10 col-sm-9">
-                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit">Save</button>
-                        <button class="btn btn-default" type="button">Cancel</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
+ 
         <!-- page end-->
       </section>
     </section>
     <!--main content end-->
-    
-  </section>
   <!-- container section end -->
 
   <!-- javascripts -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script> 
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDhsX31FUrTYYB4Umq22WKTq4kfwCZqhc0",
+    authDomain: "smartbill-b2d2b.firebaseapp.com",
+    databaseURL: "https://smartbill-b2d2b.firebaseio.com",
+    projectId: "smartbill-b2d2b",
+    storageBucket: "smartbill-b2d2b.appspot.com",
+    messagingSenderId: "335993277037"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script src="js/edittable.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <!-- nice scroll -->

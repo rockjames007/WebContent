@@ -103,7 +103,8 @@ function addUser()
 	    	                            meterid: meterid,
 	    	                            mobileno: mobileno,
 	    	                            name: name,
-	    	                            updated: timestamp 
+	    	                            updated: timestamp, 
+	    	                            uid: user.uid
 		 		                      })
 		 		                  .then(function()
 		 		                		  {
